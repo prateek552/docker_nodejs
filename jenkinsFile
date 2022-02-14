@@ -5,12 +5,12 @@ pipeline {
             steps {
                 echo "test"
             }
-        },
+        }
         stage('Build') {
             steps {
                 sh 'docker build -t docker_coinbase .'
             }
-        },
+        }
         stage("Start") {
             steps {
                 sh 'docker run --rm -it -p 127.0.0.1:3000:3000 docker_coinbase'
