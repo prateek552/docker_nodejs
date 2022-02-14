@@ -4,6 +4,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo "test"
+                sh "ls"
+                sh "cd /usr/src/app"
                 sh 'yarn test'
             }
         }
