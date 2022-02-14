@@ -7,7 +7,7 @@ const  {getCurrencies}  = require('./handlers/getCurrencies')
 const app = express();
 app.use(cors())
 
-const port = 8080;
+const port = 8083;
 
 app.get('/v1/btc/timeRangeData', async function(req, res){
     let startDate = req.query?.startDate;
