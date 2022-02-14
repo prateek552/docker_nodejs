@@ -1,7 +1,15 @@
 pipeline {
-    agent {dockerfile true} 
+    agent none
     stages {
+         stage("Fix the permission issue") {
+            agent any
+            steps {
+                sh "sudo chown root:jenkins /run/docker.sock"
+            }
+
+        }
         stage('Test') {
+            agent {dockerfile true} 
             steps {
                 echo "test"
                 sh "ls"
