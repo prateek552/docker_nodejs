@@ -8,7 +8,9 @@ ENV  COINBASE_BTC=https://api.coindesk.com/v1/bpi/historical/close.json
 COPY package.json .
 
 #RUN npm install -g yarn
-RUN yarn install
+RUN sudo yarn install
+
+RUN sudo yarn global install jest
 
 COPY . .
 
