@@ -7,8 +7,10 @@ pipeline {
                 }
             steps {
                 echo "Running test"
-                sh 'yarn test'
             }
         }
     }
 }
+
+
+
