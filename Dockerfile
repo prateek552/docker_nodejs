@@ -10,7 +10,7 @@ COPY package.json .
 #RUN npm install -g yarn
 RUN yarn install
 
-RUN yarn global install jest
+RUN yarn global add jest
 
 COPY . .
 
