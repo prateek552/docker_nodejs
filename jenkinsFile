@@ -6,6 +6,6 @@ pipeline {
                 echo "Running test"
                 sh 'yarn test'
             }
-        },
+        }
     }
 }
