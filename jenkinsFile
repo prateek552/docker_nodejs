@@ -11,6 +11,7 @@ pipeline {
         stage('Test') {
             agent {dockerfile true} 
             steps {
+                System.setProperty("org.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS", true);
                 sh "pwd"
             }
         }
