@@ -11,10 +11,7 @@ pipeline {
         stage('Test') {
             agent {dockerfile true} 
             steps {
-                echo "test"
-                sh "ls"
-                sh "cd /usr/src/app"
-                sh 'yarn test'
+                sh "pwd"
             }
         }
         // stage('Build') {
