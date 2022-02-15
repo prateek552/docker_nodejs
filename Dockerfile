@@ -1,6 +1,6 @@
 FROM node:16
 
-WORKDIR /usr/src/app
+WORKDIR /home/jenkins/agent
 
 ENV  COINBASE_CURRENCY=https://api.coindesk.com/v1/bpi/supported-currencies.json
 ENV  COINBASE_BTC=https://api.coindesk.com/v1/bpi/historical/close.json
@@ -14,9 +14,9 @@ RUN yarn global add jest
 
 COPY . .
 
-USER admin
+#USER admin
 
-#RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 EXPOSE 8080
 
