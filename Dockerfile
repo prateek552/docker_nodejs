@@ -14,7 +14,7 @@ RUN yarn global add jest
 
 COPY . .
 
-#USER admin
+USER root
 
 RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
