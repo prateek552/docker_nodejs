@@ -14,6 +14,8 @@ RUN yarn global add jest
 
 COPY . .
 
+USER admin
+
 RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 EXPOSE 8080
