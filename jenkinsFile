@@ -1,24 +1,28 @@
 pipeline {
     agent any
     stages {
-         stage("Fix the permission issue") {
-            agent any
-            steps {
-                sh "chown root:jenkins /run/docker.sock"
-            }
+        //  stage("Fix the permission issue") {
+        //     agent any
+        //     steps {
+        //         sh "chown root:jenkins /run/docker.sock"
+        //     }
 
-        }
+        // }
         stage('Test') {
-            agent {dockerfile true} 
             steps {
                 sh "pwd"
             }
         }
-        // stage('Build') {
-        //     steps {
-        //         sh 'docker build -t docker_coinbase .'
-        //     }
-        // }
+        stage('Build') {
+            steps {
+                sh 'docker build -t docker_coinbase .'
+            }
+        }
+        stage("Test") {
+            steps {
+                sh 'docker run docker_coinbase /bin/bash -c "yarn test"'
+            }
+        }
         // stage("Start") {
         //     steps {
         //         sh 'docker run --rm -i -p 127.0.0.1:8083:8083 docker_coinbase'
